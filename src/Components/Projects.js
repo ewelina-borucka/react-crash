@@ -11,7 +11,7 @@ class Projects extends Component {
         )
       });
     }
-    
+
     return (
       <div className="Projects">
         {projectItems}
