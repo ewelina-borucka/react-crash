@@ -6,21 +6,25 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      projects: [
-        {
-          title: "Business Website",
-          category: "Web Design"
-        },
-        {
-          title: "Social App",
-          category: "Mobile Design"
-        },
-        {
-          title: "Shopping Cart",
-          category: "Web Development"
-        }
-      ]
+      projects: []
     }
+  }
+
+  componentWillMount() {
+    this.setState({ projects: [
+      {
+        title: "Business Website",
+        category: "Web Design"
+      },
+      {
+        title: "Social App",
+        category: "Mobile Design"
+      },
+      {
+        title: "Shopping Cart",
+        category: "Web Development"
+      }
+    ]});
   }
 
   render() {

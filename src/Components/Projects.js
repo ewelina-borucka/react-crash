@@ -9,10 +9,9 @@ class Projects extends Component {
         return (
           <ProjectItem key={project.title} project={project} />
         )
-
-        // console.log(project);
       });
     }
+    
     return (
       <div className="Projects">
         {projectItems}
