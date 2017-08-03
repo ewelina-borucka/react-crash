@@ -13,13 +13,22 @@ class AddProject extends Component {
   }
 
   handleSubmit(e) {
+    if(this.refs.title.value === '') {
+      alert('title is required');
+    } else {
+      this.setState({newProject:{
+        title: this.refs.title.value,
+        category: this.refs.category.value
+      }}, function() {
+        this.props.addProject(this.state.newProject);
+      });
+    }
     e.preventDefault();
-    console.log(this.refs.title.value);
   }
 
   render() {
     let categoryOptions = this.props.categories.map(category => {
-      return <option key={category} value="category">{category}</option>
+      return <option key={category} value={category}>{category}</option>
     });
     return (
       <div>
@@ -35,8 +44,10 @@ class AddProject extends Component {
               {categoryOptions}
             </select>
           </div>
+          <br/>
           <input type="submit" value="Submit" />
         </form>
+        <br/>
       </div>
     );
   }
